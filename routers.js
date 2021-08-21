@@ -110,6 +110,21 @@ router.get('/warning', async (req, res) => {
   //await res.send(results);
 });
 
+const weatherAPIUrl = 'https://api.openweathermap.org/data/2.5/weather';
+router.get('/weatherForecast', (req, res) => {
+  axios
+    .get(weatherAPIUrl + `?q=Melbourne&appid=${process.env.WEATHER_API_KEY}`)
+    .then((response) => {
+      console.log(response);
+      // return the weather forecast
+      res.send(response.data);
+    })
+    .catch((err) => {
+      // catch error
+      console.log(err);
+    });
+});
+
 //check if the rss sub
 function findWord(word, str) {
   if (str.search(word) === -1) {
