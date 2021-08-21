@@ -1,0 +1,5 @@
+---
+applications:
+  - name: template
+    random-route: true
+    memory: 128M

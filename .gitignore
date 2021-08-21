@@ -1,0 +1,12 @@
+
+# node packages
+node_modules/
+
+# env file
+.env
+
+# access logs
+*.log
+
+# for rest client
+*.http
