@@ -7,7 +7,6 @@ var fs = require('fs');
 var path = require('path');
 const rssUrls = require('./models/australiaWarningRss');
 const { parse } = require('rss-to-json');
-const { url } = require('inspector');
 
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
   flags: 'a',
