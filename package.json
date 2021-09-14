@@ -5,11 +5,7 @@
   "main": "routers.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha --reporter spec",
-    "format": "prettier --write \"**/*.js\"",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier --list-different \"**/*.js\"",
-    "lint": "npm run lint:prettier && npm run lint:eslint"
+    "test": "mocha --reporter spec"
   },
   "keywords": [],
   "author": "",
@@ -23,9 +19,5 @@
     "mongoose": "^5.13.7",
     "morgan": "^1.10.0",
     "rss-to-json": "^2.0.2"
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "prettier": "^2.3.2"
   }
 }
