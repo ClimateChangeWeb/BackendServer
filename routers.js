@@ -3,10 +3,12 @@ const router = express.Router();
 const morgan = require('morgan');
 const axios = require('axios');
 const DiscoverModel = require('./models/discover');
-var fs = require('fs');
-var path = require('path');
+const CharityModel = require('./models/charity');
+const fs = require('fs');
+const path = require('path');
 const rssUrls = require('./models/australiaWarningRss');
 const { parse } = require('rss-to-json');
+const charityJson = require('./data/charities.json');
 
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
   flags: 'a',
@@ -25,6 +27,18 @@ router.get('', function (req, res) {
 //get the discover api url
 const discoverUrl = 'https://ibm-ai.us-south.cf.appdomain.cloud/discover';
 router.get('/discover', (req, res) => {
+  if (req.query.password !== process.env.ADMIN_PASSWORD) {
+    /**
+     * because this is about drop and insert data into database
+     * so it needs the auth method
+     * it also can used like JWT token tho
+     */
+    console.log('Forbidden: You dot have the permission');
+    return res
+      .status(403)
+      .json({ message: 'Forbidden: You dot have the permission' });
+  }
+
   // result to store the data
   let result;
   //get request to get the data
@@ -122,6 +136,45 @@ router.get('/weatherForecast', (req, res) => {
       // catch error
       console.log(err);
     });
+});
+
+router.get('/charity', (req, res) => {
+  if (req.query.password !== process.env.ADMIN_PASSWORD) {
+    /**
+     * because this is about drop and insert data into database
+     * so it needs the auth method
+     * it also can used like JWT token tho
+     */
+    console.log('Forbidden: You dot have the permission');
+    return res
+      .status(403)
+      .json({ message: 'Forbidden: You dot have the permission' });
+  }
+
+  //drop the current data
+  CharityModel.collection.drop();
+
+  //go through the charities
+  charityJson.forEach((element) => {
+    let newCharity = new CharityModel({
+      url: element.url,
+      name: element.name,
+      introduction: element.introduction,
+      image: element.image,
+    });
+
+    //save
+    newCharity.save((err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
+    });
+  });
+
+  res.json({
+    message: 'Completed to insert charities information into database',
+  });
 });
 
 //check if the rss sub
