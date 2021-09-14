@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Coalition for Rainforest Nations",
+    "introduction": "The origin of the global conservation mechanism – Reducing Emissions from Deforestation and Degradation (REDD+) to stop deforestation. REDD+ was successfully mandated in the Paris Climate Agreement (2015), and covers 90% of the world’s tropical rainforests forests.",
+    "url": "https://www.rainforestcoalition.org/",
+    "image": "https://www.rainforestcoalition.org/wp-content/uploads/2021/03/World-Map-_MISSIONS_OTM-1200x623.png"
+  },
+  {
+    "name": "Clean Air Task Force",
+    "introduction": "Focusing on meeting the world’s rising energy demand in a way that is financially, socially and environmentally sustainable.",
+    "url": "https://www.catf.us/",
+    "image": "https://www.catf.us/wp-content/themes/catf-5ive/assets/dist/img/logo-clean-air-task-force-color@2x.png"
+  },
+  {
+    "name": "Rainforest Foundation US",
+    "introduction": "The Rainforest Foundation is the biggest NGO working on rights-based forest protection worldwide. The Foundation is composed of three national organizations, based in Norway, the United Kingdom, and the United States, as well as the Rainforest Fund, which provides program support to the national organizations and to selected projects on the ground.",
+    "url": "https://rainforestfoundation.org/",
+    "image": "https://rainforestfoundation.org/wp-content/uploads/1003555-cropped-1024x1024.jpg"
+  },
+  {
+    "name": "Climate Emergency Fund",
+    "introduction": "We are turbo-charging the climate movement by supporting its most brave and adamant activists. We support the people who tell the truth, demand transformation at emergency speed, and put everything on the line to protect humanity and the living world.",
+    "url": "https://www.climateemergencyfund.org/",
+    "image": "https://images.squarespace-cdn.com/content/v1/60930b2084ef393517963bbe/1623167942413-WFF37KW0HO9H1DI85K12/CEF_logo_BlueTransparent+%283%29.png?format=1500w"
+  },
+  {
+    "name": "350.org",
+    "introduction": "Author and activist Bill McKibben and a group of university friends founded 350.org in 2008, with the goal to keep the global carbon dioxide concentration under 350 parts per million. They are using the power of collective individuals internationally to stop oil and gas development and move to 100 percent renewable energy.",
+    "url": "https://350.org/",
+    "image": "https://350.org/wp-content/uploads/2019/04/350-about-icons-re.png"
+  },
+  {
+    "name": "Biomimicry Institute",
+    "introduction": "Biomimicry is a design technique that solves problems by mimicking nature. Biomimicry Institute’s mission is to promote the transfer of ideas, designs, and strategies from biology to sustainable human systems design. For example, someone who wants to spend less energy building might consider using Moist Brick, a naturally cooling building material that can condense water from nighttime air similar to the skin of a Texas Horned Lizard.",
+    "url": "https://biomimicry.org/",
+    "image": "https://24rdmo160xr11sgco31bxj30-wpengine.netdna-ssl.com/wp-content/uploads/2021/08/Institute_logo_banner-green-_1_.png"
+  },
+  {
+    "name": "C40 Cities",
+    "introduction": "C40 brings together a network of megacities from around the world, allowing them to drive climate action through collaboration and knowledge sharing. New York City, Johannesburg, Hong Kong, Sydney, Tokyo, London, and Mexico City are just some of the cities on the list that have committed to the climate targets established in the Paris Agreement.",
+    "url": "https://www.c40.org/",
+    "image": "https://www.c40.org/assets/C40_logo-57b38ee305dfba11d55bea4e52203d6606e588e60d5aaf91fb196307221acf90.svg"
+  },
+  {
+    "name": "Climate Alliance",
+    "introduction": "Made up of municipalities and districts, regional governments, nongovernmental organizations (NGOs), and other organizations, Climate Alliance is one of the largest European city networks dedicated to climate action. The Alliance promotes actions to slow climate change in both European municipalities and the Amazon River basin.",
+    "url": "https://www.climatealliance.org/home.html",
+    "image": "https://www.climatealliance.org/fileadmin/_processed_/1/1/csm_querformat_group_ddd5c08430.jpg"
+  },
+  {
+    "name": "Friends of the Earth International",
+    "introduction": "Friends of the Earth uses the collective voice of grassroots members to speak truth to power and advocate for living in harmony with nature. They’ve caught the attention of large corporations and government agencies worldwide to demand that the rules of our political and economic systems need to change if we are to combat the climate crisis.",
+    "url": "https://www.foei.org/",
+    "image": "https://www.foei.org/wp-content/uploads/2013/09/foeilogo-en.jpg"
+  },
+  {
+    "name": "Extinction Rebellion",
+    "introduction": "XR is a nonpartisan movement that demands governments declare a climate emergency, reach net zero emissions by 2025, and involve citizens in decision making. They use non-violent direct action and civil disobedience to communicate the urgency of the climate crisis. Because of the decentralized leadership, anyone from anywhere in the world can organize XR actions as long as it abides by core principles and values.",
+    "url": "https://rebellion.global/",
+    "image": "https://rebellion.global/assets/uploads/image2-ff-26-07-21.jpg"
+  }
+]
