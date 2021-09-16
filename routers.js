@@ -126,7 +126,10 @@ router.get('/warning', async (req, res) => {
 const weatherAPIUrl = 'https://api.openweathermap.org/data/2.5/weather';
 router.get('/weatherForecast', (req, res) => {
   axios
-    .get(weatherAPIUrl + `?id=2158177&appid=${process.env.WEATHER_API_KEY}`)
+    .get(
+      weatherAPIUrl +
+        `?id=2158177&appid=${process.env.WEATHER_API_KEY}&units=metric`,
+    )
     .then((response) => {
       console.log(response);
       // return the weather forecast
