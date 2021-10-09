@@ -11,24 +11,32 @@ async function run() {
     const database = client.db('Sitboard');
     const cityCollection = database.collection('CityWithCountry');
 
-    for await (element of CityJson) {
-      const doc = {
-        cityName: element.name,
-        id: element.id,
-        country: await searchCountry(element),
-      };
+    let count = 0;
 
-      //give a two second timeout
-
-      console.log(doc);
-      const result = await cityCollection.insertOne(doc);
-      //console.log(`A document was inserted with the _id: ${result.insertedId}`);
-      console.log(result);
-    }
-
-    // create a document to insert
+    await cityCollection.count({}, async function (err, result) {
+      if (await err) {
+        console.log(err);
+      } else {
+        count = result;
+        console.log(result);
+        const n = await CityJson.slice(count, CityJson.length);
+        console.log(n.length);
+        for await (element of n) {
+          const doc = {
+            cityName: element.name,
+            id: element.id,
+            country: await searchCountry(element),
+          };
+          //give a two second timeout
+          console.log(doc);
+          const result = await cityCollection.insertOne(doc);
+          //console.log(`A document was inserted with the _id: ${result.insertedId}`);
+          //console.log(result);
+        }
+      }
+    });
   } finally {
-    await client.close();
+    //await client.close();
   }
 }
 
