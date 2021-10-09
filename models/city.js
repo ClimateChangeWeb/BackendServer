@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 const citySchema = new Schema({
   cityName: String,
   id: Number,
+  country: String,
 });
 
 //create the model of discover
