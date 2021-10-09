@@ -7,6 +7,7 @@ const CharityModel = require('./models/charity');
 const fs = require('fs');
 const path = require('path');
 const rssUrls = require('./models/australiaWarningRss');
+const CityWithCountry = require('./models/cityWithCountry');
 const { parse } = require('rss-to-json');
 const charityJson = require('./data/charities.json');
 
@@ -124,20 +125,32 @@ router.get('/warning', async (req, res) => {
 });
 
 const weatherAPIUrl = 'https://api.openweathermap.org/data/2.5/weather';
-router.get('/weatherForecast', (req, res) => {
+router.get('/weather', (req, res, next) => {
+  const cityId = req.query.cityId;
   axios
     .get(
       weatherAPIUrl +
-        `?id=2158177&appid=${process.env.WEATHER_API_KEY}&units=metric`,
+        `?id=${cityId}&appid=${process.env.WEATHER_API_KEY}&units=metric`,
     )
-    .then((response) => {
-      console.log(response);
-      // return the weather forecast
-      res.send(response.data);
+    .then(async (response) => {
+      const currentCountry = response.data.sys.country;
+      // console.log(response.data);
+
+      // find the city data
+      const doc = await CityWithCountry.findOne({ id: cityId });
+      console.log(doc);
+
+      // if the country is null update with the api data from weather api
+      if (await !doc.country) {
+        console.log('No country in the current document');
+        await doc.updateOne({ country: currentCountry });
+      }
+      await res.send(response.data);
     })
     .catch((err) => {
       // catch error
       console.log(err);
+      return next(err);
     });
 });
 
